@@ -1,37 +1,39 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import { NavLink, Link } from 'react-router-dom';
+import { useTheme } from '../../context/ThemeContext';
+import { personalInfo } from '../../data/resume';
 import styles from './Navbar.module.css';
 
 const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About' },
-    { to: '/projects', label: 'Projects' },
-    { to: '/resume', label: 'Resume' },
-    { to: '/contact', label: 'Contact' },
-    { to: '/blog', label: 'Blog' },
+    { to: '/', label: 'Mission' },
+    { to: '/about', label: 'Intel' },
+    { to: '/projects', label: 'Loadout' },
+    { to: '/resume', label: 'Dossier' },
+    { to: '/contact', label: 'Comms' },
+    { to: '/blog', label: 'Logs' },
 ];
 
 export default function Navbar() {
+    const { theme, toggleTheme } = useTheme();
     const [mobileOpen, setMobileOpen] = useState(false);
 
-    const closeMobile = () => setMobileOpen(false);
-
     return (
-        <nav className={styles.nav} role="navigation" aria-label="Main navigation">
-            <div className={styles.navInner}>
-                {/* Logo */}
-                <Link to="/" className={styles.logo} aria-label="Nikhil Sahani Home">
-                    <div className={styles.logoIcon}>NS</div>
-                    <span className={styles.logoText}>
-                        Nikhil<span className={styles.logoAccent}>.dev</span>
-                    </span>
+        <nav className={styles.hud} role="navigation" aria-label="Main navigation">
+            <div className={styles.hudInner}>
+                {/* Left — Operator */}
+                <Link to="/" className={styles.operatorInfo} aria-label="Home">
+                    <div>
+                        <div className={styles.operatorLabel}>Operator</div>
+                        <div className={styles.operatorName}>{personalInfo.callsign}</div>
+                    </div>
+                    <span className={styles.rankBadge}>{personalInfo.rank}</span>
                 </Link>
 
-                {/* Desktop Links */}
-                <ul className={styles.desktopLinks}>
-                    {navLinks.map(link => (
-                        <li key={link.to}>
+                {/* Center — Navigation */}
+                <ul className={styles.navLinks}>
+                    {navLinks.map((link, i) => (
+                        <li key={link.to} style={{ display: 'flex', alignItems: 'center' }}>
+                            {i > 0 && <span className={styles.navSeparator}>|</span>}
                             <NavLink
                                 to={link.to}
                                 className={({ isActive }) =>
@@ -45,9 +47,24 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                {/* Actions */}
-                <div className={styles.navActions}>
-                    <ThemeToggle />
+                {/* Right — Status + Theme + Hamburger */}
+                <div className={styles.rightSection}>
+                    <div className={styles.statusIndicator}>
+                        <span className={styles.statusDot} />
+                        {personalInfo.status}
+                    </div>
+
+                    <button
+                        className={styles.themeBtn}
+                        onClick={toggleTheme}
+                        aria-label={`Switch to ${theme === 'dark' ? 'Light Ops' : 'Dark Tactical'} theme`}
+                    >
+                        <span aria-hidden="true">{theme === 'dark' ? '☀︎' : '☾'}</span>
+                        <span className={styles.themeBtnLabel}>
+                            {theme === 'dark' ? 'OPS' : 'TAC'}
+                        </span>
+                    </button>
+
                     <button
                         className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerOpen : ''}`}
                         onClick={() => setMobileOpen(!mobileOpen)}
@@ -62,10 +79,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu */}
-            <div
-                className={`${styles.mobileMenu} ${mobileOpen ? styles.mobileMenuOpen : ''}`}
-                aria-hidden={!mobileOpen}
-            >
+            <div className={`${styles.mobileMenu} ${mobileOpen ? styles.mobileMenuOpen : ''}`} aria-hidden={!mobileOpen}>
                 {navLinks.map(link => (
                     <NavLink
                         key={link.to}
@@ -73,7 +87,7 @@ export default function Navbar() {
                         className={({ isActive }) =>
                             `${styles.mobileLink} ${isActive ? styles.mobileLinkActive : ''}`
                         }
-                        onClick={closeMobile}
+                        onClick={() => setMobileOpen(false)}
                         end={link.to === '/'}
                     >
                         {link.label}

@@ -1,24 +1,22 @@
 import { motion } from 'framer-motion';
 import ContactForm from '../../components/ContactForm/ContactForm';
+import { personalInfo } from '../../data/resume';
 import styles from './Contact.module.css';
-
-const fadeUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 },
-};
 
 export default function Contact() {
     return (
         <main className={styles.contact}>
             <div className={styles.contactInner}>
-                <motion.div {...fadeUp}>
-                    <p className="section-subtitle">// Open Channel</p>
-                    <h1 className="section-title">Contact</h1>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <p className="section-label">Open Channel</p>
+                    <h1 className="section-title">Comms</h1>
                 </motion.div>
 
                 <div className={styles.grid}>
-                    {/* Form */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -27,7 +25,6 @@ export default function Contact() {
                         <ContactForm />
                     </motion.div>
 
-                    {/* Info */}
                     <motion.div
                         className={styles.info}
                         initial={{ opacity: 0, x: 20 }}
@@ -35,44 +32,26 @@ export default function Contact() {
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
                         <p className={styles.infoText}>
-                            Ready to collaborate on your next mission? Reach out through the comm channels below
-                            or use the secure form. I typically respond within 24 hours.
+                            Ready to collaborate on a mission? Open a comms channel below
+                            or use the secure form. Typical response time: 24 hours.
                         </p>
 
                         <div className={styles.channels}>
-                            <a
-                                href="mailto:nikhilsahani@example.com"
-                                className={styles.channelItem}
-                                aria-label="Send email"
-                            >
+                            <a href={`mailto:${personalInfo.email}`} className={styles.channelItem} aria-label="Email">
                                 <span className={styles.channelIcon} aria-hidden="true">✉</span>
                                 <div>
                                     <div className={styles.channelLabel}>Email</div>
-                                    <div className={styles.channelValue}>nikhilsahani@example.com</div>
+                                    <div className={styles.channelValue}>{personalInfo.email}</div>
                                 </div>
                             </a>
-
-                            <a
-                                href="https://github.com/nikhilsahani"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.channelItem}
-                                aria-label="GitHub profile"
-                            >
+                            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className={styles.channelItem} aria-label="GitHub">
                                 <span className={styles.channelIcon} aria-hidden="true">⌨</span>
                                 <div>
                                     <div className={styles.channelLabel}>GitHub</div>
                                     <div className={styles.channelValue}>github.com/nikhilsahani</div>
                                 </div>
                             </a>
-
-                            <a
-                                href="https://linkedin.com/in/nikhilsahani"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.channelItem}
-                                aria-label="LinkedIn profile"
-                            >
+                            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className={styles.channelItem} aria-label="LinkedIn">
                                 <span className={styles.channelIcon} aria-hidden="true">🔗</span>
                                 <div>
                                     <div className={styles.channelLabel}>LinkedIn</div>

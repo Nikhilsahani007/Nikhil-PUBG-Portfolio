@@ -13,9 +13,9 @@ export default function Projects() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <p className="section-subtitle">// Mission Archive</p>
-                    <h1 className="section-title">All Projects</h1>
-                    <p className={styles.count}>{projects.length} missions completed</p>
+                    <p className="section-label">Equipment Inventory</p>
+                    <h1 className="section-title">All Loadout Slots</h1>
+                    <p className={styles.count}>{projects.length} systems in inventory</p>
                 </motion.div>
 
                 <div className={styles.grid}>

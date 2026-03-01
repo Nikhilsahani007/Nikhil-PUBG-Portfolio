@@ -5,6 +5,7 @@ export interface Experience {
     period: string;
     description: string;
     highlights: string[];
+    classification: string;
 }
 
 export interface Education {
@@ -20,38 +21,69 @@ export interface Certification {
     name: string;
     issuer: string;
     date: string;
-    credentialUrl?: string;
 }
 
 export const personalInfo = {
     name: 'Nikhil Sahani',
+    callsign: 'Nikhil_S',
+    rank: 'Full Stack Vanguard',
     title: 'Full-Stack Developer',
-    tagline: 'Building production-grade web applications with modern technologies',
+    subtitle: 'Founder — NS SiteCraft Solutions',
+    tagline: 'MERN + Java Backend Developer',
     email: 'nikhilsahani@example.com',
     phone: '+91-XXXXXXXXXX',
     location: 'India',
     github: 'https://github.com/nikhilsahani',
     linkedin: 'https://linkedin.com/in/nikhilsahani',
-    portfolio: 'https://nikhilsahani.dev',
+    status: 'ONLINE',
 };
 
 export const summary =
-    'Motivated Full-Stack Developer with hands-on experience in building scalable web applications using React, Node.js, and TypeScript. Proven ability to deliver production-ready solutions with clean architecture, comprehensive testing, and modern DevOps practices. Currently pursuing B.Tech in Computer Science at Lovely Professional University.';
+    'Full-Stack Developer and founder of NS SiteCraft Solutions with expertise in MERN stack and Java backend development. Proven track record building production-grade SaaS platforms, AI-powered systems, and secure IoT applications. Currently pursuing B.Tech in Computer Science at Lovely Professional University with internship experience at Zithara.ai.';
 
 export const experience: Experience[] = [
     {
         title: 'Frontend Developer Intern',
         company: 'Zithara.ai',
         location: 'Remote',
-        period: 'Jun 2025 – Aug 2025',
-        description:
-            'Contributed to the development of AI-powered customer engagement platform, focusing on frontend feature implementation and UI optimization.',
+        period: 'Jun 2025 — Aug 2025',
+        classification: 'FIELD DEPLOYMENT',
+        description: 'Contributed to the development of an AI-powered customer engagement platform, focusing on frontend feature implementation and performance optimization.',
         highlights: [
-            'Developed responsive React components for the customer dashboard, improving user engagement by 25%',
-            'Implemented state management with Redux Toolkit for complex data flows',
-            'Collaborated with the backend team to integrate RESTful APIs and WebSocket connections',
-            'Wrote unit tests using Jest and React Testing Library, achieving 80%+ code coverage',
-            'Participated in daily standups and bi-weekly sprint reviews in an Agile environment',
+            'Built responsive React components improving user engagement by 25%',
+            'Implemented Redux Toolkit state management for complex data flows',
+            'Integrated RESTful APIs and WebSocket connections with the backend',
+            'Achieved 80%+ code coverage with Jest and React Testing Library',
+            'Participated in Agile sprints with daily standups and retrospectives',
+        ],
+    },
+    {
+        title: 'Founder & Lead Developer',
+        company: 'NS SiteCraft Solutions',
+        location: 'India',
+        period: 'Jan 2025 — Present',
+        classification: 'ACTIVE OPERATION',
+        description: 'Founded a SaaS platform providing affordable, production-grade websites for small businesses. Handle full-stack development, client management, and deployment.',
+        highlights: [
+            'Designed and built production-grade SaaS platform from scratch',
+            'Implemented admin panel, lead management, and dynamic pricing',
+            'Achieved 95+ Lighthouse performance scores',
+            'Dockerized deployment with CI/CD pipeline',
+            'Managing client relationships and project deliveries',
+        ],
+    },
+    {
+        title: 'Freelance Developer',
+        company: 'Independent',
+        location: 'Remote',
+        period: '2024 — Present',
+        classification: 'ONGOING',
+        description: 'Taking on freelance web development projects, building custom solutions for clients using modern tech stacks.',
+        highlights: [
+            'Delivered 5+ client projects on time and within budget',
+            'Specialized in React frontends and Node.js backends',
+            'Built custom e-commerce and portfolio solutions',
+            'Maintained long-term client relationships',
         ],
     },
 ];
@@ -61,39 +93,34 @@ export const education: Education[] = [
         degree: 'B.Tech in Computer Science & Engineering',
         institution: 'Lovely Professional University',
         location: 'Punjab, India',
-        period: '2022 – 2026',
+        period: '2022 — 2026',
         gpa: '7.5 / 10',
         highlights: [
             'Data Structures & Algorithms',
             'Database Management Systems',
             'Operating Systems',
             'Software Engineering',
-            'Machine Learning Fundamentals',
+            'Machine Learning',
         ],
     },
     {
         degree: 'Higher Secondary (XII)',
         institution: 'Central Board of Secondary Education',
         location: 'India',
-        period: '2020 – 2022',
-        highlights: ['Science Stream (PCM)', 'Scored 85% aggregate'],
+        period: '2020 — 2022',
+        highlights: ['Science Stream (PCM)', '85% aggregate'],
     },
 ];
 
 export const certifications: Certification[] = [
-    {
-        name: 'Full-Stack Web Development',
-        issuer: 'Udemy',
-        date: '2024',
-    },
-    {
-        name: 'React – The Complete Guide',
-        issuer: 'Udemy',
-        date: '2024',
-    },
-    {
-        name: 'Data Structures & Algorithms in Java',
-        issuer: 'GeeksforGeeks',
-        date: '2023',
-    },
+    { name: 'Full-Stack Web Development', issuer: 'Udemy', date: '2024' },
+    { name: 'React — The Complete Guide', issuer: 'Udemy', date: '2024' },
+    { name: 'DSA in Java', issuer: 'GeeksforGeeks', date: '2023' },
 ];
+
+export const missionStats = {
+    projectsDeployed: 8,
+    systemsBuilt: 12,
+    apisDeveloped: 15,
+    clientsServed: 5,
+};

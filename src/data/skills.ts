@@ -1,61 +1,70 @@
+export interface OperatorStat {
+    name: string;
+    level: number;
+    maxLevel: number;
+    color: string;
+}
+
 export interface SkillCategory {
     category: string;
     icon: string;
-    skills: Skill[];
+    skills: { name: string; level: number }[];
 }
 
-export interface Skill {
-    name: string;
-    level: number; // 0–100
-}
+export const operatorStats: OperatorStat[] = [
+    { name: 'React Mastery', level: 90, maxLevel: 100, color: '#00f0ff' },
+    { name: 'Java Backend', level: 88, maxLevel: 100, color: '#f0a000' },
+    { name: 'Node & APIs', level: 85, maxLevel: 100, color: '#00ff88' },
+    { name: 'Database Ops', level: 80, maxLevel: 100, color: '#ff6644' },
+];
 
 export const skillCategories: SkillCategory[] = [
     {
-        category: 'Frontend',
+        category: 'Frontend Arsenal',
         icon: '🎯',
         skills: [
-            { name: 'React / React Native', level: 90 },
+            { name: 'React / Next.js', level: 90 },
             { name: 'TypeScript', level: 85 },
             { name: 'JavaScript (ES6+)', level: 92 },
             { name: 'HTML5 & CSS3', level: 95 },
+            { name: 'Three.js / R3F', level: 70 },
             { name: 'Framer Motion', level: 80 },
-            { name: 'Next.js', level: 75 },
         ],
     },
     {
-        category: 'Backend',
+        category: 'Backend Systems',
         icon: '⚙️',
         skills: [
-            { name: 'Node.js', level: 88 },
-            { name: 'Express.js', level: 85 },
-            { name: 'Python / FastAPI', level: 70 },
+            { name: 'Java / Servlets', level: 88 },
+            { name: 'Node.js / Express', level: 85 },
+            { name: 'Python / FastAPI', level: 72 },
             { name: 'REST API Design', level: 90 },
             { name: 'MongoDB', level: 82 },
-            { name: 'PostgreSQL', level: 72 },
+            { name: 'MySQL / PostgreSQL', level: 78 },
         ],
     },
     {
-        category: 'Tools & DevOps',
+        category: 'DevOps & Tools',
         icon: '🛠️',
         skills: [
             { name: 'Git & GitHub', level: 90 },
-            { name: 'Docker', level: 70 },
-            { name: 'VS Code', level: 95 },
-            { name: 'Postman / Swagger', level: 85 },
+            { name: 'Docker', level: 72 },
             { name: 'Linux / CLI', level: 75 },
-            { name: 'CI/CD (GitHub Actions)', level: 65 },
+            { name: 'Postman / Swagger', level: 85 },
+            { name: 'CI/CD Pipelines', level: 65 },
+            { name: 'VS Code Mastery', level: 95 },
         ],
     },
     {
-        category: 'Soft Skills',
+        category: 'Tactical Skills',
         icon: '🧠',
         skills: [
             { name: 'Problem Solving', level: 92 },
-            { name: 'Team Collaboration', level: 88 },
-            { name: 'Communication', level: 85 },
-            { name: 'Agile / Scrum', level: 78 },
-            { name: 'Time Management', level: 82 },
-            { name: 'Quick Learner', level: 95 },
+            { name: 'System Design', level: 78 },
+            { name: 'Team Leadership', level: 85 },
+            { name: 'Agile / Scrum', level: 80 },
+            { name: 'Technical Writing', level: 75 },
+            { name: 'Quick Adaptation', level: 95 },
         ],
     },
 ];

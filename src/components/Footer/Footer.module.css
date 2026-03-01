@@ -1,8 +1,7 @@
 .footer {
     border-top: 1px solid var(--border-primary);
     background: var(--bg-secondary);
-    padding: var(--space-2xl) 0 var(--space-lg);
-    position: relative;
+    padding: var(--space-xl) 0 var(--space-md);
 }
 
 .footerInner {
@@ -12,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-lg);
+    gap: var(--space-md);
 }
 
 @media (min-width: 768px) {
@@ -23,14 +22,8 @@
 }
 
 .footerBrand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.footerLogo {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-heading);
     letter-spacing: 0.1em;
@@ -50,8 +43,8 @@
 
 .footerLink {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--text-secondary);
+    font-size: 0.7rem;
+    color: var(--text-muted);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -62,17 +55,14 @@
     color: var(--accent-primary);
 }
 
-.divider {
-    width: 100%;
-    height: 1px;
-    background: var(--border-secondary);
-    margin: var(--space-md) 0;
-}
-
 .copyright {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: var(--text-muted);
     text-align: center;
     letter-spacing: 0.05em;
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--border-secondary);
+    width: 100%;
 }

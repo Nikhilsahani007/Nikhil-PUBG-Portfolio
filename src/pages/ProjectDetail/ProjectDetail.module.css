@@ -1,5 +1,5 @@
 .detail {
-    padding-top: calc(64px + var(--space-3xl));
+    padding-top: calc(56px + var(--space-3xl));
     min-height: 100vh;
 }
 
@@ -14,7 +14,7 @@
     align-items: center;
     gap: 0.4rem;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
     text-decoration: none;
     margin-bottom: var(--space-xl);
@@ -29,17 +29,63 @@
     margin-bottom: var(--space-2xl);
 }
 
-.category {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--bg-primary);
-    background: var(--accent-primary);
-    padding: 0.2rem 0.6rem;
-    border-radius: var(--radius-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+.missionMeta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
     margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.slotBadge {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.rarityBadge {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid;
+}
+
+.rarityLegendary {
+    color: #f0a000;
+    border-color: rgba(240, 160, 0, 0.4);
+    background: rgba(240, 160, 0, 0.08);
+}
+
+.rarityEpic {
+    color: #b060ff;
+    border-color: rgba(176, 96, 255, 0.4);
+    background: rgba(176, 96, 255, 0.08);
+}
+
+.rarityRare {
+    color: #00a0ff;
+    border-color: rgba(0, 160, 255, 0.4);
+    background: rgba(0, 160, 255, 0.08);
+}
+
+.rarityCommon {
+    color: #80a0b0;
+    border-color: rgba(128, 160, 176, 0.3);
+    background: rgba(128, 160, 176, 0.05);
+}
+
+.typeBadge {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .title {
@@ -48,7 +94,7 @@
 }
 
 .shortDesc {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: var(--space-lg);
@@ -67,9 +113,8 @@
     flex-wrap: wrap;
 }
 
-/* Case Study Sections */
 .caseSection {
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-xl);
     padding: var(--space-xl);
     background: var(--gradient-card);
     border: 1px solid var(--border-primary);
@@ -90,7 +135,7 @@
 
 .caseSectionLabel {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--accent-primary);
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -99,7 +144,7 @@
 
 .caseSectionTitle {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-heading);
     text-transform: uppercase;
@@ -107,7 +152,7 @@
 }
 
 .caseSectionText {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.7;
 }
@@ -120,9 +165,9 @@
 }
 
 .featureList li {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
-    padding-left: 1.5rem;
+    padding-left: 1.4rem;
     position: relative;
 }
 
@@ -130,7 +175,7 @@
     content: '▸';
     position: absolute;
     left: 0;
-    color: var(--accent-green);
+    color: var(--accent-tertiary);
     font-weight: bold;
 }
 

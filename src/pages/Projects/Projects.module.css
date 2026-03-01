@@ -1,12 +1,12 @@
 .projects {
-    padding-top: calc(64px + var(--space-3xl));
+    padding-top: calc(56px + var(--space-3xl));
     min-height: 100vh;
 }
 
 .projectsInner {
     max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 var(--container-padding);
+    padding: 0 var(--container-padding) var(--space-4xl);
 }
 
 .header {
@@ -15,16 +15,15 @@
 
 .count {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
     margin-top: var(--space-sm);
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--space-xl);
-    padding-bottom: var(--space-4xl);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-lg);
 }
 
 @media (max-width: 768px) {

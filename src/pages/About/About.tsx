@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import SkillBar from '../../components/SkillBar/SkillBar';
 import { skillCategories } from '../../data/skills';
-import { summary, experience, education } from '../../data/resume';
+import { summary, experience, education, personalInfo } from '../../data/resume';
 import styles from './About.module.css';
 
 const fadeUp = {
-    initial: { opacity: 0, y: 30 },
+    initial: { opacity: 0, y: 25 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
     transition: { duration: 0.5 },
@@ -13,112 +13,121 @@ const fadeUp = {
 
 export default function About() {
     return (
-        <main className={styles.about}>
-            <div className={styles.aboutInner}>
-                {/* Intro */}
-                <motion.section className={styles.intro} {...fadeUp}>
-                    <div className={styles.avatarWrap}>
+        <main className={styles.intel}>
+            <div className={styles.intelInner}>
+                <motion.div {...fadeUp}>
+                    <span className={styles.classifiedStamp}>Classified</span>
+                    <p className="section-label">Intel / Background</p>
+                    <h1 className="section-title">Operator Dossier</h1>
+                </motion.div>
+
+                {/* Dossier Card */}
+                <motion.div
+                    className={styles.dossier}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                    <div className={styles.dossierHeader}>
                         <div className={styles.avatar} aria-hidden="true">NS</div>
+                        <div className={styles.nameBlock}>
+                            <h2>{personalInfo.name}</h2>
+                            <p>{personalInfo.title} · {personalInfo.subtitle}</p>
+                        </div>
                     </div>
-                    <div className={styles.bioContent}>
-                        <p className="section-subtitle">// Operator Profile</p>
-                        <h1 className="section-title">About Me</h1>
+
+                    {/* Background */}
+                    <div className={styles.dossierSection}>
+                        <h3 className={styles.dossierSectionTitle}>Background</h3>
                         <p className={styles.bioText}>{summary}</p>
-                        <p className={styles.bioText}>
-                            Currently pursuing <strong>B.Tech in Computer Science & Engineering</strong> at
-                            Lovely Professional University, with hands-on experience from my internship at{' '}
-                            <strong className="text-accent">Zithara.ai</strong>.
-                        </p>
                     </div>
-                </motion.section>
 
-                {/* Skills */}
-                <section className={styles.skillsSection}>
-                    <motion.div {...fadeUp}>
-                        <p className="section-subtitle">// Arsenal</p>
-                        <h2 className="section-title">Skills & Expertise</h2>
-                    </motion.div>
-
-                    <div className={styles.skillsGrid}>
-                        {skillCategories.map((cat, catIdx) => (
-                            <motion.div
-                                key={cat.category}
-                                className={styles.skillCard}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-                            >
-                                <div className={styles.skillCardHeader}>
-                                    <span className={styles.skillCardIcon} aria-hidden="true">{cat.icon}</span>
-                                    <h3 className={styles.skillCardTitle}>{cat.category}</h3>
-                                </div>
-                                {cat.skills.map(skill => (
-                                    <SkillBar key={skill.name} name={skill.name} level={skill.level} />
-                                ))}
-                            </motion.div>
-                        ))}
+                    {/* Deployments */}
+                    <div className={styles.dossierSection}>
+                        <h3 className={styles.dossierSectionTitle}>Field Deployments</h3>
+                        <div className={styles.deploymentsGrid}>
+                            {experience.map((exp, i) => (
+                                <motion.div
+                                    key={i}
+                                    className={styles.deploymentCard}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                                >
+                                    <div className={styles.deploymentHeader}>
+                                        <div>
+                                            <div className={styles.deploymentTitle}>{exp.title}</div>
+                                            <div className={styles.deploymentCompany}>@ {exp.company} — {exp.location}</div>
+                                        </div>
+                                        <div style={{ textAlign: 'right' }}>
+                                            <span className={styles.deploymentClassification}>{exp.classification}</span>
+                                            <div className={styles.deploymentPeriod}>{exp.period}</div>
+                                        </div>
+                                    </div>
+                                    <p className={styles.deploymentDesc}>{exp.description}</p>
+                                    <ul className={styles.deploymentList}>
+                                        {exp.highlights.map((h, j) => <li key={j}>{h}</li>)}
+                                    </ul>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
-                </section>
+                </motion.div>
 
-                {/* Experience */}
-                <section className={styles.timeline}>
-                    <motion.div {...fadeUp}>
-                        <p className="section-subtitle">// Deployment History</p>
-                        <h2 className="section-title">Experience</h2>
-                    </motion.div>
+                {/* Capabilities / Skills */}
+                <motion.div {...fadeUp}>
+                    <p className="section-label">Arsenal / Capabilities</p>
+                    <h2 className="section-title">Technical Skills</h2>
+                </motion.div>
 
-                    {experience.map((exp, i) => (
+                <div className={styles.skillsGrid} style={{ marginTop: 'var(--space-xl)' }}>
+                    {skillCategories.map((cat, catIdx) => (
                         <motion.div
-                            key={i}
-                            className={styles.timelineCard}
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            key={cat.category}
+                            className={styles.skillCard}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
+                            transition={{ duration: 0.4, delay: catIdx * 0.08 }}
                         >
-                            <div className={styles.timelineHeader}>
-                                <div>
-                                    <h3 className={styles.timelineTitle}>{exp.title}</h3>
-                                    <span className={styles.timelineCompany}>@ {exp.company} — {exp.location}</span>
-                                </div>
-                                <span className={styles.timelinePeriod}>{exp.period}</span>
+                            <div className={styles.skillCardHeader}>
+                                <span className={styles.skillCardIcon} aria-hidden="true">{cat.icon}</span>
+                                <h3 className={styles.skillCardTitle}>{cat.category}</h3>
                             </div>
-                            <p className={styles.timelineDesc}>{exp.description}</p>
-                            <ul className={styles.timelineHighlights}>
-                                {exp.highlights.map((h, j) => (
-                                    <li key={j}>{h}</li>
-                                ))}
-                            </ul>
+                            {cat.skills.map(skill => (
+                                <SkillBar key={skill.name} name={skill.name} level={skill.level} />
+                            ))}
                         </motion.div>
                     ))}
-                </section>
+                </div>
 
                 {/* Education */}
-                <section className="section">
+                <div className="section">
                     <motion.div {...fadeUp}>
-                        <p className="section-subtitle">// Training Grounds</p>
-                        <h2 className="section-title">Education</h2>
+                        <p className="section-label">Training / Education</p>
+                        <h2 className="section-title">Training Grounds</h2>
                     </motion.div>
 
-                    <div className={styles.eduGrid}>
+                    <div className={styles.eduGrid} style={{ marginTop: 'var(--space-xl)' }}>
                         {education.map((edu, i) => (
                             <motion.div
                                 key={i}
                                 className={styles.eduCard}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 15 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.4, delay: i * 0.1 }}
                             >
-                                <h3 className={styles.eduDegree}>{edu.degree}</h3>
-                                <p className={styles.eduSchool}>{edu.institution}</p>
-                                <p className={styles.eduPeriod}>{edu.period} — {edu.location}</p>
-                                {edu.gpa && <p className={styles.eduGpa}>GPA: {edu.gpa}</p>}
+                                <div className={styles.eduDegree}>{edu.degree}</div>
+                                <div className={styles.eduSchool}>{edu.institution}</div>
+                                <div className={styles.eduPeriod}>{edu.period} — {edu.location}</div>
+                                {edu.gpa && <div className={styles.eduGpa}>GPA: {edu.gpa}</div>}
                             </motion.div>
                         ))}
                     </div>
-                </section>
+                </div>
             </div>
         </main>
     );
