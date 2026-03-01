@@ -1,0 +1,169 @@
+.resume {
+    padding-top: calc(64px + var(--space-3xl));
+    min-height: 100vh;
+}
+
+.resumeInner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding) var(--space-4xl);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+}
+
+.resumeCard {
+    background: var(--gradient-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: var(--space-2xl);
+    margin-bottom: var(--space-xl);
+}
+
+.resumeCard::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+}
+
+.resumeName {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    margin-bottom: var(--space-xs);
+}
+
+.resumeTitle {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--accent-primary);
+    margin-bottom: var(--space-md);
+}
+
+.resumeContact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.resumeContact a {
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.resumeContact a:hover {
+    color: var(--accent-primary);
+}
+
+.sectionDivider {
+    border: none;
+    height: 1px;
+    background: var(--border-primary);
+    margin: var(--space-xl) 0;
+}
+
+.resumeSectionTitle {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--border-secondary);
+}
+
+.expItem {
+    margin-bottom: var(--space-xl);
+}
+
+.expHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.expTitle {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+.expCompany {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.expPeriod {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.expList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: var(--space-sm);
+}
+
+.expList li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    position: relative;
+}
+
+.expList li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+}
+
+.certGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-md);
+}
+
+.certItem {
+    padding: var(--space-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-secondary);
+}
+
+.certName {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    text-transform: uppercase;
+}
+
+.certIssuer {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.certDate {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}

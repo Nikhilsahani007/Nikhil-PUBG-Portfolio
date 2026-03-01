@@ -1,0 +1,145 @@
+.detail {
+    padding-top: calc(64px + var(--space-3xl));
+    min-height: 100vh;
+}
+
+.detailInner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding) var(--space-4xl);
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: var(--space-xl);
+    transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+    color: var(--accent-primary);
+}
+
+.heroSection {
+    margin-bottom: var(--space-2xl);
+}
+
+.category {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--bg-primary);
+    background: var(--accent-primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-md);
+}
+
+.title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: var(--space-md);
+}
+
+.shortDesc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+}
+
+.techTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: var(--space-lg);
+}
+
+.links {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+/* Case Study Sections */
+.caseSection {
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-xl);
+    background: var(--gradient-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    position: relative;
+}
+
+.caseSection::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid var(--accent-primary);
+    border-left: 2px solid var(--accent-primary);
+}
+
+.caseSectionLabel {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-xs);
+}
+
+.caseSectionTitle {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+}
+
+.caseSectionText {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.featureList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.featureList li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.featureList li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: bold;
+}
+
+.notFound {
+    text-align: center;
+    padding: var(--space-4xl) 0;
+}
+
+.notFoundTitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-md);
+}
