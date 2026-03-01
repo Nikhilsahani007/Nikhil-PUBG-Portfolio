@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import MetaTags from '../../components/MetaTags/MetaTags';
 import { projects } from '../../data/projects';
 import styles from './ProjectDetail.module.css';
 
@@ -30,8 +32,41 @@ export default function ProjectDetail() {
         );
     }
 
+    // Inject per-project JSON-LD schema
+    useEffect(() => {
+        if (!project) return;
+        const schema = {
+            '@context': 'https://schema.org',
+            '@type': 'SoftwareApplication',
+            name: project.title,
+            description: project.shortDescription,
+            applicationCategory: project.category,
+            author: { '@type': 'Person', name: 'Nikhil Sahani' },
+            programmingLanguage: project.techStack,
+            url: `https://nikhilsahani.dev/projects/${project.slug}`,
+        };
+        let el = document.getElementById('json-ld-project') as HTMLScriptElement | null;
+        if (!el) {
+            el = document.createElement('script');
+            el.id = 'json-ld-project';
+            el.type = 'application/ld+json';
+            document.head.appendChild(el);
+        }
+        el.textContent = JSON.stringify(schema);
+        return () => { document.getElementById('json-ld-project')?.remove(); };
+    }, [project]);
+
     return (
         <main className={styles.detail}>
+            {project && (
+                <MetaTags
+                    title={`${project.title} | Nikhil Sahani Portfolio`}
+                    description={`${project.shortDescription} Built with ${project.techStack.slice(0, 3).join(', ')} by Nikhil Sahani — Full Stack Developer.`}
+                    keywords={`${project.title}, ${project.techStack.join(', ')}, Nikhil Sahani, Full Stack Developer Project`}
+                    canonical={`https://nikhilsahani.dev/projects/${project.slug}`}
+                    ogType="article"
+                />
+            )}
             <div className={styles.detailInner}>
                 <Link to="/projects" className={styles.backLink}>← Back to Loadout</Link>
 

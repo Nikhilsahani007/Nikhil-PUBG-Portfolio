@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import MetaTags from '../../components/MetaTags/MetaTags';
 import SkillBar from '../../components/SkillBar/SkillBar';
 import { skillCategories } from '../../data/skills';
 import { summary, experience, education, personalInfo } from '../../data/resume';
@@ -14,6 +15,13 @@ const fadeUp = {
 export default function About() {
     return (
         <main className={styles.intel}>
+            <MetaTags
+                title="About Nikhil Sahani | MERN & Java Backend Developer"
+                description="Nikhil Sahani — Full Stack Developer, Founder of NS SiteCraft Solutions, and intern at Zithara.ai. Expert in MERN stack, Java backend, REST APIs, and freelance web development."
+                keywords="Nikhil Sahani About, Full Stack Developer Bio, MERN Developer India, Java Backend Engineer, NS SiteCraft Solutions Founder, Zithara.ai Intern"
+                canonical="https://nikhilsahani.dev/about"
+                ogType="profile"
+            />
             <div className={styles.intelInner}>
                 <motion.div {...fadeUp}>
                     <span className={styles.classifiedStamp}>Classified</span>

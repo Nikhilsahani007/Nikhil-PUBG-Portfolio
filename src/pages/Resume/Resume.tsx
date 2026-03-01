@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import MetaTags from '../../components/MetaTags/MetaTags';
 import {
     personalInfo,
     summary,
@@ -19,6 +20,12 @@ const fadeUp = {
 export default function Resume() {
     return (
         <main className={styles.resume}>
+            <MetaTags
+                title="Resume | Nikhil Sahani — Full Stack Developer"
+                description="Nikhil Sahani's resume: Full Stack Developer with MERN stack and Java backend expertise. Internship at Zithara.ai, Founder of NS SiteCraft Solutions, freelance developer."
+                keywords="Nikhil Sahani Resume, Full Stack Developer CV, MERN Developer CV India, Java Backend Resume, React Developer Portfolio"
+                canonical="https://nikhilsahani.dev/resume"
+            />
             <div className={styles.resumeInner}>
                 <motion.div className={styles.header} {...fadeUp}>
                     <div>

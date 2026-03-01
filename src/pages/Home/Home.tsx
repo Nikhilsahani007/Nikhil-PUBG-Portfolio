@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import MetaTags from '../../components/MetaTags/MetaTags';
 import Scene3D from '../../components/Scene3D/Scene3D';
 import StatPanel from '../../components/StatPanel/StatPanel';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
@@ -14,6 +15,12 @@ const featured = projects.filter(p => p.featured);
 export default function Home() {
     return (
         <>
+            <MetaTags
+                title="Nikhil Sahani | Full Stack MERN & Java Developer"
+                description="Nikhil Sahani is a Full Stack Developer specializing in MERN stack and Java backend systems. Founder of NS SiteCraft Solutions. Available for freelance and full-time roles in India."
+                keywords="Nikhil Sahani, Full Stack Developer India, MERN Stack Developer, Java Backend Developer, React Developer, Node.js Developer, Freelance Web Developer India, NS SiteCraft Solutions"
+                canonical="https://nikhilsahani.dev/"
+            />
             {/* ===== HERO (3D Loadout Screen) ===== */}
             <section className={styles.hero}>
                 <div className={styles.heroGrid}>
@@ -55,7 +62,8 @@ export default function Home() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.25 }}
                         >
-                            MERN + Java Backend Developer · Founder of NS SiteCraft Solutions ·
+                            Software Developer ·
+                            Founder of NS SiteCraft Solutions ·
                             Building production-grade systems with modern tech.
                         </motion.p>
 

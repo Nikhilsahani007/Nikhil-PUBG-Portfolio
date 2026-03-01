@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private routes (add as needed)
+# Disallow: /admin
+
+# Sitemap
+Sitemap: https://nikhilsahani.dev/sitemap.xml
+
+# Crawl delay (optional, be polite to bots)
+Crawl-delay: 10

@@ -13,7 +13,7 @@ function BlogList() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <p className="section-subtitle">// Field Reports</p>
+                    <p className="section-label">// Field Reports</p>
                     <h1 className="section-title">Blog</h1>
                 </motion.div>
 

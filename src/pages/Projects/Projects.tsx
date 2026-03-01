@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import MetaTags from '../../components/MetaTags/MetaTags';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import { projects } from '../../data/projects';
 import styles from './Projects.module.css';
@@ -6,6 +7,12 @@ import styles from './Projects.module.css';
 export default function Projects() {
     return (
         <main className={styles.projects}>
+            <MetaTags
+                title="Projects | Nikhil Sahani — Full Stack Developer"
+                description="Explore Nikhil Sahani's project portfolio: AI-powered chatbots, Java food ordering systems, ML-based IIoT security, and full-stack SaaS platforms built with MERN and Java."
+                keywords="Nikhil Sahani Projects, MERN Stack Projects, Java Backend Projects, React Portfolio, MongoDB Projects, Full Stack Portfolio India"
+                canonical="https://nikhilsahani.dev/projects"
+            />
             <div className={styles.projectsInner}>
                 <motion.div
                     className={styles.header}
