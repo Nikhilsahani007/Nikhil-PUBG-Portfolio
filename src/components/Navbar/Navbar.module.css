@@ -1,268 +1,213 @@
-.hud {
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    height: var(--navbar-height);
     z-index: var(--z-nav);
-    background: var(--bg-overlay);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(2, 13, 26, 0.6);
     border-bottom: 1px solid var(--border-primary);
-    height: 56px;
+    transition: background var(--transition-base), border-color var(--transition-base);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
-.hudInner {
+.navbar.scrolled {
+    background: rgba(2, 13, 26, 0.88);
+    border-bottom-color: rgba(0, 245, 255, 0.3);
+    box-shadow: 0 2px 20px rgba(0, 245, 255, 0.08);
+}
+
+.inner {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-padding);
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    gap: 1rem;
 }
 
-/* Left - Operator Info */
-.operatorInfo {
+/* ===== LEFT ===== */
+.left {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
+    gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 .operatorLabel {
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     color: var(--text-muted);
-    text-transform: uppercase;
     letter-spacing: 0.12em;
 }
 
-.operatorName {
+.callsign {
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    color: var(--accent-primary);
+    color: var(--cyan);
     letter-spacing: 0.08em;
+    text-shadow: 0 0 10px var(--cyan-glow);
 }
 
-.rankBadge {
+.badge {
     font-family: var(--font-mono);
-    font-size: 0.6rem;
-    color: var(--accent-secondary);
-    border: 1px solid var(--border-amber);
-    padding: 0.1rem 0.4rem;
-    border-radius: var(--radius-sm);
+    font-size: 0.55rem;
+    color: var(--gold);
+    border: 1px solid rgba(212, 160, 23, 0.4);
+    padding: 0.15rem 0.5rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    display: none;
+    background: rgba(212, 160, 23, 0.06);
 }
 
-@media (min-width: 768px) {
-    .rankBadge {
-        display: inline;
-    }
-}
-
-/* Center - Navigation */
+/* ===== CENTER NAV ===== */
 .navLinks {
-    display: none;
+    display: flex;
     align-items: center;
-    gap: 0.15rem;
+    gap: 0.25rem;
     list-style: none;
-}
-
-@media (min-width: 768px) {
-    .navLinks {
-        display: flex;
-    }
 }
 
 .navLink {
     font-family: var(--font-heading);
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 600;
-    color: var(--text-muted);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    padding: 0.45rem 0.7rem;
+    color: var(--text-secondary);
+    padding: 0.35rem 0.7rem;
     border-radius: var(--radius-sm);
-    text-decoration: none;
-    transition: all var(--transition-fast);
+    transition: all var(--transition-base);
     position: relative;
 }
 
-.navLink:hover,
-.navLinkActive {
-    color: var(--accent-primary);
-    background: rgba(0, 240, 255, 0.06);
-    text-shadow: 0 0 8px var(--accent-glow);
-}
-
-.navLinkActive::after {
+.navLink::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 50%;
     transform: translateX(-50%);
-    width: 16px;
-    height: 2px;
-    background: var(--accent-primary);
-    box-shadow: 0 0 6px var(--accent-glow);
+    width: 0;
+    height: 1px;
+    background: var(--cyan);
+    transition: width var(--transition-base);
 }
 
-.navSeparator {
-    color: var(--text-muted);
-    font-size: 0.5rem;
-    opacity: 0.3;
-    margin: 0 0.1rem;
+.navLink:hover {
+    color: var(--cyan);
+    background: rgba(0, 245, 255, 0.06);
 }
 
-/* Right - Status */
-.rightSection {
+.navLink:hover::after {
+    width: 70%;
+}
+
+.navLink.active {
+    color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan-glow);
+}
+
+.navLink.active::after {
+    width: 70%;
+}
+
+/* ===== RIGHT ===== */
+.right {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: 0.75rem;
+    flex-shrink: 0;
 }
 
-.statusIndicator {
-    display: none;
+.online {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--green);
+    display: flex;
     align-items: center;
     gap: 0.35rem;
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    color: var(--accent-tertiary);
-    text-transform: uppercase;
     letter-spacing: 0.1em;
 }
 
-@media (min-width: 900px) {
-    .statusIndicator {
-        display: flex;
-    }
-}
-
-.statusDot {
+.onlineDot {
     width: 6px;
     height: 6px;
-    background: var(--accent-tertiary);
     border-radius: 50%;
-    box-shadow: 0 0 8px var(--accent-green-glow);
-    animation: glowPulse 2s ease-in-out infinite;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green-glow);
+    animation: blink 2s ease-in-out infinite;
 }
 
-.themeBtn {
-    background: transparent;
-    border: 1px solid var(--border-primary);
-    border-radius: var(--radius-sm);
-    padding: 0.35rem 0.6rem;
-    cursor: pointer;
-    color: var(--accent-primary);
+.time {
     font-family: var(--font-mono);
-    font-size: 0.65rem;
-    text-transform: uppercase;
+    font-size: 0.62rem;
+    color: var(--text-muted);
     letter-spacing: 0.08em;
-    transition: all var(--transition-base);
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
 }
 
-.themeBtn:hover {
-    background: rgba(0, 240, 255, 0.06);
-    border-color: var(--border-glow);
-    box-shadow: var(--shadow-glow);
-}
-
-.themeBtnLabel {
-    display: none;
-}
-
-@media (min-width: 768px) {
-    .themeBtnLabel {
-        display: inline;
-    }
-}
-
-/* Hamburger */
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-}
-
-@media (min-width: 768px) {
-    .hamburger {
-        display: none;
-    }
-}
-
-.hamburgerLine {
-    width: 20px;
-    height: 2px;
-    background: var(--accent-primary);
-    transition: all var(--transition-fast);
-    border-radius: 1px;
-}
-
-.hamburgerOpen .hamburgerLine:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
-}
-
-.hamburgerOpen .hamburgerLine:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburgerOpen .hamburgerLine:nth-child(3) {
-    transform: rotate(-45deg) translate(4px, -4px);
-}
-
-/* Mobile Menu */
-.mobileMenu {
-    display: none;
-    position: fixed;
-    top: 56px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--bg-overlay);
-    backdrop-filter: blur(20px);
-    z-index: calc(var(--z-nav) - 1);
-    padding: var(--space-xl);
-    flex-direction: column;
-    gap: var(--space-sm);
-}
-
-.mobileMenuOpen {
-    display: flex;
-    animation: fadeIn 0.25s ease;
-}
-
-@media (min-width: 768px) {
-
-    .mobileMenu,
-    .mobileMenuOpen {
-        display: none;
-    }
-}
-
-.mobileLink {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 600;
+.opsBadge {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
     color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--border-secondary);
-    text-decoration: none;
-    transition: color var(--transition-fast);
+    border: 1px solid var(--border-secondary);
+    padding: 0.12rem 0.5rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all var(--transition-fast);
 }
 
-.mobileLink:hover,
-.mobileLinkActive {
-    color: var(--accent-primary);
-    text-shadow: 0 0 10px var(--accent-glow);
+.opsBadge:hover {
+    color: var(--cyan);
+    border-color: var(--border-primary);
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .badge {
+        display: none;
+    }
+
+    .navLink {
+        font-size: 0.6rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .time {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .operatorLabel {
+        display: none;
+    }
+
+    .navLinks {
+        gap: 0;
+    }
+
+    .navLink {
+        font-size: 0.55rem;
+        padding: 0.25rem 0.4rem;
+    }
+
+    .opsBadge {
+        display: none;
+    }
 }

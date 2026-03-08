@@ -1,0 +1,122 @@
+.loadout {
+    background: linear-gradient(180deg, transparent, rgba(212, 160, 23, 0.015), transparent);
+}
+
+.categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+/* ===== CATEGORY CARD ===== */
+.categoryCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.4rem;
+    transition: all 0.25s ease;
+}
+
+.catHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.catIcon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.catName {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    flex: 1;
+}
+
+.catCount {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+}
+
+.catDivider {
+    height: 1px;
+    border-radius: 1px;
+    opacity: 0.35;
+}
+
+/* ===== SKILL GRID ===== */
+.skillGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+/* ===== SKILL CHIP ===== */
+.skillChip {
+    display: grid;
+    grid-template-columns: 22px 1fr 60px;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.skillChip:hover {
+    border-color: var(--chip-color, var(--cyan));
+    background: rgba(0, 245, 255, 0.04);
+}
+
+.chipIcon {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--chip-color, var(--cyan));
+    text-align: center;
+    font-style: normal;
+}
+
+.chipName {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chipBar {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.chipBarFill {
+    height: 100%;
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .categoriesGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .skillChip {
+        grid-template-columns: 22px 1fr;
+    }
+
+    .chipBar {
+        display: none;
+    }
+}

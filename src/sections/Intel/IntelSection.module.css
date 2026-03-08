@@ -1,0 +1,263 @@
+.intel {
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 245, 255, 0.02) 50%, transparent 100%);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+/* ===== BIO CARD ===== */
+.bioCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardTag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid rgba(212, 160, 23, 0.35);
+    padding: 0.15rem 0.5rem;
+    background: rgba(212, 160, 23, 0.06);
+}
+
+.cardId {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.avatarWrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.15), rgba(0, 100, 130, 0.1));
+    border: 2px solid rgba(0, 245, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--cyan);
+    letter-spacing: 0.06em;
+    text-shadow: 0 0 12px var(--cyan-glow);
+}
+
+.avatarGlow {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 245, 255, 0.12);
+    animation: avatarSpin 6s linear infinite;
+    border-top-color: rgba(0, 245, 255, 0.4);
+}
+
+@keyframes avatarSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.profileName {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.profileTitle {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--cyan);
+    letter-spacing: 0.08em;
+}
+
+.profileSub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+}
+
+.onlineTag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--green);
+    letter-spacing: 0.1em;
+}
+
+.bio {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.85;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border-secondary);
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.infoLabel {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.infoVal {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-primary);
+    letter-spacing: 0.04em;
+}
+
+/* ===== STATS PANEL ===== */
+.statsPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.statsPanelLabel {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.statCard {
+    text-align: center;
+    padding: 1.2rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.statValue {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--cyan);
+    text-shadow: 0 0 16px var(--cyan-glow);
+    line-height: 1;
+}
+
+.statLabel {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* ===== WHAT CARD ===== */
+.whatCard {
+    padding: 1.2rem;
+}
+
+.whatTitle {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.whatList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.whatItem {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.bullet {
+    color: var(--cyan);
+    flex-shrink: 0;
+    font-size: 0.65rem;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .statsGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .infoGrid {
+        grid-template-columns: 1fr;
+    }
+}

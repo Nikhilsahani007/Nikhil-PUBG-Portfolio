@@ -1,98 +1,103 @@
-import { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { useTheme } from '../../context/ThemeContext';
-import { personalInfo } from '../../data/resume';
+import { useEffect, useState, useRef } from 'react';
 import styles from './Navbar.module.css';
 
-const navLinks = [
-    { to: '/', label: 'Mission' },
-    { to: '/about', label: 'Intel' },
-    { to: '/projects', label: 'Loadout' },
-    { to: '/resume', label: 'Dossier' },
-    { to: '/contact', label: 'Comms' },
-    { to: '/blog', label: 'Logs' },
+const NAV_LINKS = [
+    { label: 'Mission', href: '#mission' },
+    { label: 'Intel', href: '#intel' },
+    { label: 'Loadout', href: '#loadout' },
+    { label: 'Dossier', href: '#dossier' },
+    { label: 'Comms', href: '#comms' },
+    { label: 'Logs', href: '#logs' },
 ];
 
 export default function Navbar() {
-    const { theme, toggleTheme } = useTheme();
-    const [mobileOpen, setMobileOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState('mission');
+    const [time, setTime] = useState('');
+    const tickRef = useRef<number>(0);
+
+    useEffect(() => {
+        const updateTime = () => {
+            const now = new Date();
+            setTime(now.toLocaleTimeString('en-US', { hour12: false }));
+        };
+        updateTime();
+        const id = setInterval(updateTime, 1000);
+        return () => clearInterval(id);
+    }, []);
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    useEffect(() => {
+        const sections = NAV_LINKS.map(l => l.href.slice(1));
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) setActiveSection(entry.target.id);
+                });
+            },
+            { rootMargin: '-40% 0px -50% 0px' }
+        );
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        tickRef.current = window.setInterval(() => { }, 500);
+        return () => clearInterval(tickRef.current);
+    }, []);
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+            const offset = 60;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+    };
 
     return (
-        <nav className={styles.hud} role="navigation" aria-label="Main navigation">
-            <div className={styles.hudInner}>
-                {/* Left — Operator */}
-                <Link to="/" className={styles.operatorInfo} aria-label="Home">
-                    <div>
-                        <div className={styles.operatorLabel}>Operator</div>
-                        <div className={styles.operatorName}>{personalInfo.callsign}</div>
-                    </div>
-                    <span className={styles.rankBadge}>{personalInfo.rank}</span>
-                </Link>
+        <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+            <div className={styles.inner}>
+                {/* LEFT — Identity */}
+                <div className={styles.left}>
+                    <span className={styles.operatorLabel}>OPERATOR:</span>
+                    <span className={styles.callsign}>Nikhil_S</span>
+                    <span className={styles.badge}>FULL STACK VANGUARD</span>
+                </div>
 
-                {/* Center — Navigation */}
+                {/* CENTER — Nav Links */}
                 <ul className={styles.navLinks}>
-                    {navLinks.map((link, i) => (
-                        <li key={link.to} style={{ display: 'flex', alignItems: 'center' }}>
-                            {i > 0 && <span className={styles.navSeparator}>|</span>}
-                            <NavLink
-                                to={link.to}
-                                className={({ isActive }) =>
-                                    `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`
-                                }
-                                end={link.to === '/'}
+                    {NAV_LINKS.map(link => (
+                        <li key={link.href}>
+                            <a
+                                href={link.href}
+                                className={`${styles.navLink} ${activeSection === link.href.slice(1) ? styles.active : ''}`}
+                                onClick={(e) => handleNavClick(e, link.href)}
                             >
                                 {link.label}
-                            </NavLink>
+                            </a>
                         </li>
                     ))}
                 </ul>
 
-                {/* Right — Status + Theme + Hamburger */}
-                <div className={styles.rightSection}>
-                    <div className={styles.statusIndicator}>
-                        <span className={styles.statusDot} />
-                        {personalInfo.status}
-                    </div>
-
-                    <button
-                        className={styles.themeBtn}
-                        onClick={toggleTheme}
-                        aria-label={`Switch to ${theme === 'dark' ? 'Light Ops' : 'Dark Tactical'} theme`}
-                    >
-                        <span aria-hidden="true">{theme === 'dark' ? '☀︎' : '☾'}</span>
-                        <span className={styles.themeBtnLabel}>
-                            {theme === 'dark' ? 'OPS' : 'TAC'}
-                        </span>
-                    </button>
-
-                    <button
-                        className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerOpen : ''}`}
-                        onClick={() => setMobileOpen(!mobileOpen)}
-                        aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-                        aria-expanded={mobileOpen}
-                    >
-                        <span className={styles.hamburgerLine} />
-                        <span className={styles.hamburgerLine} />
-                        <span className={styles.hamburgerLine} />
-                    </button>
+                {/* RIGHT — Status */}
+                <div className={styles.right}>
+                    <span className={styles.online}>
+                        <span className={styles.onlineDot} />
+                        ONLINE
+                    </span>
+                    <span className={styles.time}>{time}</span>
+                    <span className={styles.opsBadge}>⚙ OPS</span>
                 </div>
-            </div>
-
-            {/* Mobile Menu */}
-            <div className={`${styles.mobileMenu} ${mobileOpen ? styles.mobileMenuOpen : ''}`} aria-hidden={!mobileOpen}>
-                {navLinks.map(link => (
-                    <NavLink
-                        key={link.to}
-                        to={link.to}
-                        className={({ isActive }) =>
-                            `${styles.mobileLink} ${isActive ? styles.mobileLinkActive : ''}`
-                        }
-                        onClick={() => setMobileOpen(false)}
-                        end={link.to === '/'}
-                    >
-                        {link.label}
-                    </NavLink>
-                ))}
             </div>
         </nav>
     );
