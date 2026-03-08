@@ -16,10 +16,11 @@ export default function StructuredData() {
                     'Software Developer and Founder of NS SiteCraft Solutions. Specializes in MERN stack (MongoDB, Express.js, React, Node.js) and Java backend development.',
                 alumniOf: {
                     '@type': 'CollegeOrUniversity',
-                    name: 'Lovely Professional University',
+                    name: 'Jawaharlal Nehru Technological University (JNTU)',
                     address: {
                         '@type': 'PostalAddress',
-                        addressLocality: 'Punjab',
+                        addressLocality: 'Hyderabad',
+                        addressRegion: 'Telangana',
                         addressCountry: 'IN',
                     },
                 },
@@ -33,8 +34,8 @@ export default function StructuredData() {
                     addressCountry: 'IN',
                 },
                 sameAs: [
-                    'https://github.com/nikhilsahani',
-                    'https://linkedin.com/in/nikhilsahani',
+                    'https://github.com/nikhilsahani007',
+                    'https://www.linkedin.com/in/nikhil-sahani-o07/',
                 ],
                 knowsAbout: [
                     'React', 'Node.js', 'MongoDB', 'Express.js',

@@ -91,8 +91,8 @@ export const experience: Experience[] = [
 export const education: Education[] = [
     {
         degree: 'B.Tech in Computer Science & Engineering',
-        institution: 'Lovely Professional University',
-        location: 'Punjab, India',
+        institution: 'Jawaharlal Nehru Technological University (JNTU)',
+        location: 'Hyderabad, Telangana, India',
         period: '2022 — 2026',
         gpa: '7.5 / 10',
         highlights: [
