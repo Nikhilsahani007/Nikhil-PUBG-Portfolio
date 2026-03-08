@@ -39,7 +39,8 @@ export const personalInfo = {
 };
 
 export const summary =
-    'Software Developer and founder of NS SiteCraft Solutions with expertise in MERN stack and Java backend development. Proven track record building production-grade SaaS platforms, AI-powered systems, and secure IoT applications. Currently pursuing B.Tech in Computer Science at Lovely Professional University with internship experience at Zithara.ai.';
+    'Software Developer and founder of NS SiteCraft Solutions with expertise in MERN stack and Java backend development. Proven track record building production-grade SaaS platforms, AI-powered systems, and secure IoT applications. Currently pursuing B.Tech in Computer Science at Jawaharlal Nehru Technological University (JNTU), Hyderabad, with internship experience at Zithara.ai.';
+
 
 export const experience: Experience[] = [
     {
