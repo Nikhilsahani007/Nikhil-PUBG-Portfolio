@@ -77,7 +77,7 @@ export default function MissionSection() {
                     </h1>
 
                     <div className={`${styles.titleRow} fade-in-up`}>
-                        <span className={styles.titleText}>Full-Stack Developer</span>
+                        <span className={styles.titleText}>Software Developer</span>
                     </div>
 
                     <p className={`${styles.subtitle} fade-in-up`}>

@@ -16,10 +16,10 @@ export default function Home() {
     return (
         <>
             <MetaTags
-                title="Nikhil Sahani | Full Stack MERN & Java Developer"
-                description="Nikhil Sahani is a Full Stack Developer specializing in MERN stack and Java backend systems. Founder of NS SiteCraft Solutions. Available for freelance and full-time roles in India."
-                keywords="Nikhil Sahani, Full Stack Developer India, MERN Stack Developer, Java Backend Developer, React Developer, Node.js Developer, Freelance Web Developer India, NS SiteCraft Solutions"
-                canonical="https://nikhilsahani.dev/"
+                title="Nikhil Sahani | Software Developer"
+                description="Nikhil Sahani is a Software Developer specializing in MERN stack and Java backend systems. Founder of NS SiteCraft Solutions. Available for freelance and full-time roles in India."
+                keywords="Nikhil Sahani, Software Developer India, Full Stack Developer India, MERN Stack Developer, Java Backend Developer, React Developer, Node.js Developer, Freelance Web Developer India, NS SiteCraft Solutions"
+                canonical="https://nikhilsahani.vercel.app/"
             />
             {/* ===== HERO (3D Loadout Screen) ===== */}
             <section className={styles.hero}>
@@ -53,7 +53,7 @@ export default function Home() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                         >
                             Nikhil Sahani
-                            <span className={styles.heroAccent}>Full-Stack Developer</span>
+                            <span className={styles.heroAccent}>Software Developer</span>
                         </motion.h1>
 
                         <motion.p

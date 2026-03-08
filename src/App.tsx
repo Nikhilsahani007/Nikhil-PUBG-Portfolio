@@ -1,3 +1,4 @@
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar/Navbar';
 import FloatingDock from './components/FloatingDock/FloatingDock';
 import MissionSection from './sections/Mission/MissionSection';
@@ -10,17 +11,19 @@ import './styles/global.css';
 
 export default function App() {
   return (
-    <div className="app-root">
-      <Navbar />
-      <main>
-        <MissionSection />
-        <IntelSection />
-        <LoadoutSection />
-        <DossierSection />
-        <CommsSection />
-        <LogsSection />
-      </main>
-      <FloatingDock />
-    </div>
+    <ThemeProvider>
+      <div className="app-root">
+        <Navbar />
+        <main>
+          <MissionSection />
+          <IntelSection />
+          <LoadoutSection />
+          <DossierSection />
+          <CommsSection />
+          <LogsSection />
+        </main>
+        <FloatingDock />
+      </div>
+    </ThemeProvider>
   );
 }

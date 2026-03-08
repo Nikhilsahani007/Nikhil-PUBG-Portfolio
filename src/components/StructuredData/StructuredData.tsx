@@ -11,9 +11,9 @@ export default function StructuredData() {
                 name: 'Nikhil Sahani',
                 url: 'https://nikhilsahani.dev',
                 image: 'https://nikhilsahani.dev/og-image.png',
-                jobTitle: 'Full Stack Developer',
+                jobTitle: 'Software Developer',
                 description:
-                    'Full Stack Developer and Founder of NS SiteCraft Solutions. Specializes in MERN stack (MongoDB, Express.js, React, Node.js) and Java backend development.',
+                    'Software Developer and Founder of NS SiteCraft Solutions. Specializes in MERN stack (MongoDB, Express.js, React, Node.js) and Java backend development.',
                 alumniOf: {
                     '@type': 'CollegeOrUniversity',
                     name: 'Lovely Professional University',

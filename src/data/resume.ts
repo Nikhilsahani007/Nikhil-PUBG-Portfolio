@@ -27,26 +27,26 @@ export const personalInfo = {
     name: 'Nikhil Sahani',
     callsign: 'Nikhil_S',
     rank: 'Full Stack Vanguard',
-    title: 'Full-Stack Developer',
+    title: 'Software Developer',
     subtitle: 'Founder — NS SiteCraft Solutions',
     tagline: 'MERN + Java Backend Developer',
-    email: 'nikhilsahani@example.com',
-    phone: '+91-XXXXXXXXXX',
+    email: 'nikhils63041@gmail.com',
+    phone: '+91 9390969461',
     location: 'India',
-    github: 'https://github.com/nikhilsahani',
-    linkedin: 'https://linkedin.com/in/nikhilsahani',
+    github: 'https://github.com/nikhilsahani007',
+    linkedin: 'https://www.linkedin.com/in/nikhil-sahani-o07/',
     status: 'ONLINE',
 };
 
 export const summary =
-    'Full-Stack Developer and founder of NS SiteCraft Solutions with expertise in MERN stack and Java backend development. Proven track record building production-grade SaaS platforms, AI-powered systems, and secure IoT applications. Currently pursuing B.Tech in Computer Science at Lovely Professional University with internship experience at Zithara.ai.';
+    'Software Developer and founder of NS SiteCraft Solutions with expertise in MERN stack and Java backend development. Proven track record building production-grade SaaS platforms, AI-powered systems, and secure IoT applications. Currently pursuing B.Tech in Computer Science at Lovely Professional University with internship experience at Zithara.ai.';
 
 export const experience: Experience[] = [
     {
-        title: 'Frontend Developer Intern',
+        title: 'Software Developer Intern',
         company: 'Zithara.ai',
         location: 'Remote',
-        period: 'Jun 2025 — Aug 2025',
+        period: 'Jan 2025 — Jun 2025',
         classification: 'FIELD DEPLOYMENT',
         description: 'Contributed to the development of an AI-powered customer engagement platform, focusing on frontend feature implementation and performance optimization.',
         highlights: [

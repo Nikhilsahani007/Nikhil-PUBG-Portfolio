@@ -101,3 +101,63 @@
   --gradient-accent: linear-gradient(135deg, #00f5ff, #0088aa);
   --gradient-amber: linear-gradient(135deg, #d4a017, #a07810);
 }
+
+/* ===== LIGHT OPS THEME ===== */
+[data-theme="light"] {
+  --bg-primary: #e8eff5;
+  --bg-secondary: #dce4ec;
+  --bg-tertiary: #cfd8e2;
+  --bg-card: rgba(220, 228, 236, 0.88);
+  --bg-card-hover: rgba(210, 220, 230, 0.96);
+  --bg-overlay: rgba(232, 239, 245, 0.94);
+
+  --cyan: #0080aa;
+  --gold: #9e7010;
+  --green: #1a8a00;
+  --red-orange: #cc3322;
+
+  --cyan-glow: rgba(0, 128, 170, 0.25);
+  --cyan-glow-strong: rgba(0, 128, 170, 0.45);
+  --gold-glow: rgba(158, 112, 16, 0.25);
+  --green-glow: rgba(26, 138, 0, 0.2);
+  --red-glow: rgba(204, 51, 34, 0.2);
+
+  --accent-primary: var(--cyan);
+  --accent-secondary: var(--gold);
+  --accent-tertiary: var(--green);
+  --accent-glow: var(--cyan-glow);
+  --accent-amber: var(--gold);
+  --accent-amber-glow: var(--gold-glow);
+  --accent-green: var(--green);
+  --accent-green-glow: var(--green-glow);
+  --accent-red: var(--red-orange);
+  --accent-red-glow: var(--red-glow);
+
+  --text-primary: #1a2835;
+  --text-secondary: #43596a;
+  --text-heading: #0d1e2a;
+  --text-muted: #7a95a8;
+
+  --border-primary: rgba(0, 128, 170, 0.22);
+  --border-secondary: rgba(26, 40, 53, 0.09);
+  --border-glow: rgba(0, 128, 170, 0.45);
+  --border-amber: rgba(158, 112, 16, 0.28);
+
+  --scanline: rgba(0, 80, 110, 0.008);
+  --grid-line: rgba(0, 128, 170, 0.04);
+  --hud-line: rgba(0, 128, 170, 0.07);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.18);
+  --shadow-glow: 0 0 18px var(--cyan-glow);
+  --shadow-glow-strong: 0 0 28px var(--cyan-glow-strong);
+  --shadow-amber-glow: 0 0 18px var(--gold-glow);
+  --shadow-green-glow: 0 0 18px var(--green-glow);
+
+  --gradient-hero: radial-gradient(ellipse at 30% 50%, rgba(0, 128, 170, 0.07) 0%, transparent 60%),
+    linear-gradient(180deg, #e8eff5 0%, #dce4ec 100%);
+  --gradient-card: linear-gradient(145deg, rgba(220, 228, 236, 0.95), rgba(232, 239, 245, 0.98));
+  --gradient-accent: linear-gradient(135deg, #0080aa, #005577);
+  --gradient-amber: linear-gradient(135deg, #9e7010, #7a5200);
+}

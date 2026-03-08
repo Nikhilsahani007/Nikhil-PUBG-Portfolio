@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
@@ -96,7 +97,8 @@ export default function Navbar() {
                         ONLINE
                     </span>
                     <span className={styles.time}>{time}</span>
-                    <span className={styles.opsBadge}>⚙ OPS</span>
+                    <ThemeToggle />
+                    
                 </div>
             </div>
         </nav>
