@@ -34,7 +34,7 @@ export default function StructuredData() {
                     addressCountry: 'IN',
                 },
                 sameAs: [
-                    'https://github.com/nikhilsahani007',
+                    'https://github.com/Nikhilsahani007',
                     'https://www.linkedin.com/in/nikhil-sahani-o07/',
                 ],
                 knowsAbout: [
@@ -62,7 +62,7 @@ export default function StructuredData() {
                     '@type': 'PostalAddress',
                     addressCountry: 'IN',
                 },
-                sameAs: ['https://github.com/nikhilsahani'],
+                sameAs: ['https://github.com/Nikhilsahani007'],
             },
 
             // WebSite Schema

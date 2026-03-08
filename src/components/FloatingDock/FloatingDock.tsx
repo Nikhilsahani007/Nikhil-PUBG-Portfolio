@@ -8,7 +8,7 @@ const DOCK_LINKS = [
             </svg>
         ),
         label: 'GitHub',
-        href: 'https://github.com/NikhilSahani',
+        href: 'https://github.com/Nikhilsahani007',
     },
     {
         icon: (
@@ -17,7 +17,7 @@ const DOCK_LINKS = [
             </svg>
         ),
         label: 'LinkedIn',
-        href: 'https://linkedin.com/in/nikhilsahani',
+        href: 'https://www.linkedin.com/in/nikhil-sahani-o07/',
     },
     {
         icon: (
@@ -26,7 +26,7 @@ const DOCK_LINKS = [
             </svg>
         ),
         label: 'LeetCode',
-        href: 'https://leetcode.com/nikhilsahani',
+        href: 'https://leetcode.com/u/Nikhil_Sahani_007/',
     },
     {
         icon: (
@@ -35,7 +35,7 @@ const DOCK_LINKS = [
             </svg>
         ),
         label: 'Instagram',
-        href: 'https://instagram.com/nikhilsahani',
+        href: 'https://www.instagram.com/nikhil.sahani.357/',
     },
     {
         icon: (
@@ -44,7 +44,7 @@ const DOCK_LINKS = [
             </svg>
         ),
         label: 'HackerRank',
-        href: 'https://hackerrank.com/nikhilsahani',
+        href: 'https://www.hackerrank.com/profile/nikhils63041',
     },
     {
         icon: (
@@ -62,7 +62,7 @@ const DOCK_LINKS = [
             </svg>
         ),
         label: 'Email',
-        href: 'mailto:nikhilsahani@example.com',
+        href: 'mailto:nikhils63041@gmail.com',
     },
 ];
 

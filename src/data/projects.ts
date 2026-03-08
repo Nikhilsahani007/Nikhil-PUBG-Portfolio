@@ -43,7 +43,7 @@ export const projects: Project[] = [
     category: 'AI / Full-Stack',
     rarity: 'Legendary',
     thumbnail: '',
-    githubUrl: 'https://github.com/nikhilsahani',
+    githubUrl: 'https://github.com/Nikhilsahani007',
     featured: true,
   },
   {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     category: 'Java Backend',
     rarity: 'Epic',
     thumbnail: '',
-    githubUrl: 'https://github.com/nikhilsahani',
+    githubUrl: 'https://github.com/Nikhilsahani007',
     featured: true,
   },
   {
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     category: 'ML / Security',
     rarity: 'Legendary',
     thumbnail: '',
-    githubUrl: 'https://github.com/nikhilsahani',
+    githubUrl: 'https://github.com/Nikhilsahani007',
     featured: true,
   },
   {
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     rarity: 'Epic',
     thumbnail: '',
     liveUrl: '#',
-    githubUrl: 'https://github.com/nikhilsahani',
+    githubUrl: 'https://github.com/Nikhilsahani007',
     featured: true,
   },
   {
@@ -149,7 +149,7 @@ export const projects: Project[] = [
     category: 'Backend',
     rarity: 'Rare',
     thumbnail: '',
-    githubUrl: 'https://github.com/nikhilsahani',
+    githubUrl: 'https://github.com/Nikhilsahani007',
     featured: false,
   },
 ];

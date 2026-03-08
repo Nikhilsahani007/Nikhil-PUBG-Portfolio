@@ -33,7 +33,7 @@ export const personalInfo = {
     email: 'nikhils63041@gmail.com',
     phone: '+91 9390969461',
     location: 'India',
-    github: 'https://github.com/nikhilsahani007',
+    github: 'https://github.com/Nikhilsahani007',
     linkedin: 'https://www.linkedin.com/in/nikhil-sahani-o07/',
     status: 'ONLINE',
 };

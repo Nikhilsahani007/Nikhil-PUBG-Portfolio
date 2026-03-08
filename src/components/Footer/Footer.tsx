@@ -11,9 +11,9 @@ export default function Footer() {
                 </span>
 
                 <ul className={styles.footerLinks}>
-                    <li><a href="https://github.com/nikhilsahani" target="_blank" rel="noopener noreferrer" className={styles.footerLink} aria-label="GitHub">GitHub</a></li>
-                    <li><a href="https://linkedin.com/in/nikhilsahani" target="_blank" rel="noopener noreferrer" className={styles.footerLink} aria-label="LinkedIn">LinkedIn</a></li>
-                    <li><a href="mailto:nikhilsahani@example.com" className={styles.footerLink} aria-label="Email">Email</a></li>
+                    <li><a href="https://github.com/Nikhilsahani007" target="_blank" rel="noopener noreferrer" className={styles.footerLink} aria-label="GitHub">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/nikhil-sahani-o07/" target="_blank" rel="noopener noreferrer" className={styles.footerLink} aria-label="LinkedIn">LinkedIn</a></li>
+                    <li><a href="mailto:nikhils63041@gmail.com" className={styles.footerLink} aria-label="Email">Email</a></li>
                 </ul>
             </div>
 

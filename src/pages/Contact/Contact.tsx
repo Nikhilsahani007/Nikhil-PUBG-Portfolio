@@ -55,14 +55,14 @@ export default function Contact() {
                                 <span className={styles.channelIcon} aria-hidden="true">⌨</span>
                                 <div>
                                     <div className={styles.channelLabel}>GitHub</div>
-                                    <div className={styles.channelValue}>github.com/nikhilsahani</div>
+                                    <div className={styles.channelValue}>github.com/Nikhilsahani007</div>
                                 </div>
                             </a>
                             <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className={styles.channelItem} aria-label="LinkedIn">
                                 <span className={styles.channelIcon} aria-hidden="true">🔗</span>
                                 <div>
                                     <div className={styles.channelLabel}>LinkedIn</div>
-                                    <div className={styles.channelValue}>linkedin.com/in/nikhilsahani</div>
+                                    <div className={styles.channelValue}>linkedin.com/in/nikhil-sahani-o07</div>
                                 </div>
                             </a>
                         </div>

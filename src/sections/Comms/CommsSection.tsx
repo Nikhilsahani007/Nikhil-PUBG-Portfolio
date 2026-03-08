@@ -69,7 +69,7 @@ export default function CommsSection() {
                                     <div>
                                         <p className={styles.contactLabel}>GITHUB</p>
                                         <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className={styles.contactVal}>
-                                            github.com/NikhilSahani
+                                            github.com/Nikhilsahani007
                                         </a>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@ export default function CommsSection() {
                                     <div>
                                         <p className={styles.contactLabel}>LINKEDIN</p>
                                         <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className={styles.contactVal}>
-                                            linkedin.com/in/nikhilsahani
+                                            linkedin.com/in/nikhil-sahani-o07
                                         </a>
                                     </div>
                                 </div>
