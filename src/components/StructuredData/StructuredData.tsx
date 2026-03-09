@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+const SITE_URL = 'https://nikhilsahani.vercel.app';
+
 // JSON-LD structured data for the entire site
 export default function StructuredData() {
     useEffect(() => {
@@ -9,11 +11,13 @@ export default function StructuredData() {
                 '@context': 'https://schema.org',
                 '@type': 'Person',
                 name: 'Nikhil Sahani',
-                url: 'https://nikhilsahani.dev',
-                image: 'https://nikhilsahani.dev/og-image.png',
+                url: SITE_URL,
+                image: `${SITE_URL}/og-image.png`,
                 jobTitle: 'Software Developer',
                 description:
                     'Software Developer and Founder of NS SiteCraft Solutions. Specializes in MERN stack (MongoDB, Express.js, React, Node.js) and Java backend development.',
+                email: 'nikhils63041@gmail.com',
+                telephone: '+91-9390969461',
                 alumniOf: {
                     '@type': 'CollegeOrUniversity',
                     name: 'Jawaharlal Nehru Technological University (JNTU)',
@@ -40,9 +44,9 @@ export default function StructuredData() {
                 knowsAbout: [
                     'React', 'Node.js', 'MongoDB', 'Express.js',
                     'Java', 'JDBC', 'MySQL', 'TypeScript',
-                    'REST APIs', 'Docker', 'AWS', 'Python',
+                    'REST APIs', 'Docker', 'Python',
                     'Machine Learning', 'Full Stack Development',
-                    'Freelance Web Development',
+                    'Freelance Web Development', 'MERN Stack',
                 ],
             },
 
@@ -65,11 +69,11 @@ export default function StructuredData() {
                 sameAs: ['https://github.com/Nikhilsahani007'],
             },
 
-            // WebSite Schema
+            // WebSite Schema with Search
             {
                 '@context': 'https://schema.org',
                 '@type': 'WebSite',
-                url: 'https://nikhilsahani.dev',
+                url: SITE_URL,
                 name: 'Nikhil Sahani — Full Stack Developer Portfolio',
                 description:
                     'Portfolio of Nikhil Sahani, Full Stack MERN & Java Developer and Founder of NS SiteCraft Solutions.',
@@ -79,9 +83,53 @@ export default function StructuredData() {
                 },
                 potentialAction: {
                     '@type': 'SearchAction',
-                    target: 'https://nikhilsahani.dev/projects?q={search_term_string}',
+                    target: `${SITE_URL}/projects?q={search_term_string}`,
                     'query-input': 'required name=search_term_string',
                 },
+            },
+
+            // BreadcrumbList Schema for main navigation
+            {
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                    {
+                        '@type': 'ListItem',
+                        position: 1,
+                        name: 'Home',
+                        item: `${SITE_URL}/`,
+                    },
+                    {
+                        '@type': 'ListItem',
+                        position: 2,
+                        name: 'Projects',
+                        item: `${SITE_URL}/projects`,
+                    },
+                    {
+                        '@type': 'ListItem',
+                        position: 3,
+                        name: 'About',
+                        item: `${SITE_URL}/about`,
+                    },
+                    {
+                        '@type': 'ListItem',
+                        position: 4,
+                        name: 'Resume',
+                        item: `${SITE_URL}/resume`,
+                    },
+                    {
+                        '@type': 'ListItem',
+                        position: 5,
+                        name: 'Blog',
+                        item: `${SITE_URL}/blog`,
+                    },
+                    {
+                        '@type': 'ListItem',
+                        position: 6,
+                        name: 'Contact',
+                        item: `${SITE_URL}/contact`,
+                    },
+                ],
             },
         ];
 
@@ -99,7 +147,7 @@ export default function StructuredData() {
         });
 
         return () => {
-            [0, 1, 2].forEach(i => {
+            [0, 1, 2, 3].forEach(i => {
                 const el = document.getElementById(`json-ld-${i}`);
                 if (el) el.remove();
             });

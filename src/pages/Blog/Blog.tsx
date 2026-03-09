@@ -1,11 +1,20 @@
 import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import MetaTags from '../../components/MetaTags/MetaTags';
 import { blogPosts } from '../../data/blog';
 import styles from './Blog.module.css';
 
 function BlogList() {
     return (
         <main className={styles.blog}>
+            <MetaTags
+                title="Blog | Nikhil Sahani — Full Stack Developer"
+                description="Articles and field reports by Nikhil Sahani on React, TypeScript, Node.js, Java backend development, and freelance software engineering."
+                keywords="Nikhil Sahani Blog, Full Stack Developer Blog, React Tutorial, Node.js Guide, TypeScript Best Practices, MERN Stack Guide, Java Backend Blog"
+                canonical="https://nikhilsahani.vercel.app/blog"
+                ogType="website"
+            />
             <div className={styles.blogInner}>
                 <motion.div
                     className={styles.header}
@@ -26,7 +35,7 @@ function BlogList() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                         >
-                            <Link to={`/blog/${post.slug}`} className={styles.postCard}>
+                            <Link to={`/blog/${post.slug}`} className={styles.postCard} aria-label={`Read: ${post.title}`}>
                                 <div className={styles.postMeta}>
                                     <span>{post.date}</span>
                                     <span>{post.readTime}</span>
@@ -52,6 +61,38 @@ function BlogPost() {
     const { slug } = useParams<{ slug: string }>();
     const post = blogPosts.find(p => p.slug === slug);
 
+    // Per-post Article schema
+    useEffect(() => {
+        if (!post) return;
+        const schema = {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.date,
+            author: {
+                '@type': 'Person',
+                name: 'Nikhil Sahani',
+                url: 'https://nikhilsahani.vercel.app',
+            },
+            publisher: {
+                '@type': 'Person',
+                name: 'Nikhil Sahani',
+            },
+            url: `https://nikhilsahani.vercel.app/blog/${post.slug}`,
+            keywords: post.tags.join(', '),
+        };
+        let el = document.getElementById('json-ld-blog-post') as HTMLScriptElement | null;
+        if (!el) {
+            el = document.createElement('script');
+            el.id = 'json-ld-blog-post';
+            el.type = 'application/ld+json';
+            document.head.appendChild(el);
+        }
+        el.textContent = JSON.stringify(schema);
+        return () => { document.getElementById('json-ld-blog-post')?.remove(); };
+    }, [post]);
+
     if (!post) {
         return (
             <main className={styles.blog}>
@@ -67,6 +108,13 @@ function BlogPost() {
 
     return (
         <main className={styles.blog}>
+            <MetaTags
+                title={`${post.title} | Nikhil Sahani`}
+                description={post.excerpt}
+                keywords={`${post.tags.join(', ')}, Nikhil Sahani, Full Stack Developer Blog`}
+                canonical={`https://nikhilsahani.vercel.app/blog/${post.slug}`}
+                ogType="article"
+            />
             <div className={styles.blogInner}>
                 <div className={styles.singlePost}>
                     <Link to="/blog" className="font-mono" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
@@ -93,6 +141,11 @@ function BlogPost() {
                             className={styles.postContent}
                             dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>') }}
                         />
+
+                        {/* Internal link back */}
+                        <div style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-color)' }}>
+                            <Link to="/blog" className="btn btn-secondary">← All Field Reports</Link>
+                        </div>
                     </motion.div>
                 </div>
             </div>

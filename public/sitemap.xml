@@ -6,89 +6,89 @@
 
   <!-- Core Pages -->
   <url>
-    <loc>https://nikhilsahani.dev/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/about</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/about</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/projects</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/projects</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/resume</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/resume</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/contact</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/contact</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/blog</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/blog</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Project Pages -->
   <url>
-    <loc>https://nikhilsahani.dev/projects/ai-customer-query-assistant</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/projects/ai-customer-query-assistant</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/projects/online-food-ordering-system</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/projects/online-food-ordering-system</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/projects/cyberattack-detection-iiot</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/projects/cyberattack-detection-iiot</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/projects/ns-sitecraft-solutions</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/projects/ns-sitecraft-solutions</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/projects/realtime-tactical-comms</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://nikhilsahani.vercel.app/projects/realtime-tactical-comms</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://nikhilsahani.dev/blog/building-production-react-apps</loc>
+    <loc>https://nikhilsahani.vercel.app/blog/building-production-react-apps</loc>
     <lastmod>2026-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/blog/typescript-best-practices-2025</loc>
+    <loc>https://nikhilsahani.vercel.app/blog/typescript-best-practices-2025</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nikhilsahani.dev/blog/from-intern-to-developer</loc>
+    <loc>https://nikhilsahani.vercel.app/blog/from-intern-to-developer</loc>
     <lastmod>2026-02-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

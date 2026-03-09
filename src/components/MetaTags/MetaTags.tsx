@@ -10,7 +10,7 @@ interface MetaTagsProps {
     noindex?: boolean;
 }
 
-const BASE_URL = 'https://nikhilsahani.dev';
+const BASE_URL = 'https://nikhilsahani.vercel.app';
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
 
 export default function MetaTags({
