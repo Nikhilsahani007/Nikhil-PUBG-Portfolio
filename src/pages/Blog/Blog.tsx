@@ -9,9 +9,9 @@ function BlogList() {
     return (
         <main className={styles.blog}>
             <MetaTags
-                title="Blog | Nikhil Sahani — Full Stack Developer"
+                title="Blog | Nikhil Sahani — Software Developer"
                 description="Articles and field reports by Nikhil Sahani on React, TypeScript, Node.js, Java backend development, and freelance software engineering."
-                keywords="Nikhil Sahani Blog, Full Stack Developer Blog, React Tutorial, Node.js Guide, TypeScript Best Practices, MERN Stack Guide, Java Backend Blog"
+                keywords="Nikhil Sahani Blog, Software Developer Blog, React Tutorial, Node.js Guide, TypeScript Best Practices, MERN Stack Guide, Java Backend Blog"
                 canonical="https://nikhilsahani.vercel.app/blog"
                 ogType="website"
             />

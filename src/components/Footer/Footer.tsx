@@ -31,7 +31,7 @@ export default function Footer() {
 
             <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 var(--container-padding)' }}>
                 <p className={styles.copyright}>
-                    © {year} Nikhil Sahani — Full Stack MERN &amp; Java Developer // Built with React + TypeScript
+                    © {year} Nikhil Sahani — Software Developer // Built with React + TypeScript
                 </p>
             </div>
         </footer>

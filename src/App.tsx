@@ -17,8 +17,8 @@ export default function App() {
     <ThemeProvider>
       <StructuredData />
       <MetaTags
-        title="Nikhil Sahani | Full Stack MERN &amp; Java Developer"
-        description="Full Stack Developer specializing in MERN stack and Java backend development. Founder of NS SiteCraft Solutions with real-world project experience. Available for freelance and full-time roles in India."
+        title="Nikhil Sahani | Software Developer"
+        description="Software Developer specializing in MERN stack and Java backend development. Founder of NS SiteCraft Solutions with real-world project experience. Available for freelance and full-time roles in India."
         keywords="Nikhil Sahani, Software Developer India, Full Stack Developer India, MERN Stack Developer, Java Backend Developer, React Developer, Node.js Developer, Freelance Web Developer India, NS SiteCraft Solutions"
         canonical="https://nikhilsahani.vercel.app/"
       />

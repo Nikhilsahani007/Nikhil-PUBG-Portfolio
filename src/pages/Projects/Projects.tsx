@@ -8,7 +8,7 @@ export default function Projects() {
     return (
         <main className={styles.projects}>
             <MetaTags
-                title="Projects | Nikhil Sahani — Full Stack Developer"
+                title="Projects | Nikhil Sahani — Software Developer"
                 description="Explore Nikhil Sahani's project portfolio: AI-powered chatbots, Java food ordering systems, ML-based IIoT security, and full-stack SaaS platforms built with MERN and Java."
                 keywords="Nikhil Sahani Projects, MERN Stack Projects, Java Backend Projects, React Portfolio, MongoDB Projects, Full Stack Portfolio India"
                 canonical="https://nikhilsahani.dev/projects"

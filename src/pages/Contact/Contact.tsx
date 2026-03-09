@@ -8,9 +8,9 @@ export default function Contact() {
     return (
         <main className={styles.contact}>
             <MetaTags
-                title="Contact Nikhil Sahani | Hire Full Stack Developer"
-                description="Get in touch with Nikhil Sahani — Full Stack MERN and Java Developer available for freelance projects, full-time roles, and collaboration. Based in India, working remotely."
-                keywords="Hire Full Stack Developer India, Hire MERN Developer, Freelance React Developer India, Contact Nikhil Sahani, Full Stack Developer for Hire"
+                title="Contact Nikhil Sahani | Hire Software Developer"
+                description="Get in touch with Nikhil Sahani — Software Developer available for freelance projects, full-time roles, and collaboration. Based in India, working remotely."
+                keywords="Hire Software Developer India, Hire MERN Developer, Freelance React Developer India, Contact Nikhil Sahani, Software Developer for Hire"
                 canonical="https://nikhilsahani.dev/contact"
             />
             <div className={styles.contactInner}>
